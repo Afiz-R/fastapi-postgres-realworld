@@ -37,7 +37,7 @@ async def add_article_comment(
     engine: AIOEngine = EngineD,
 ):
     article = await get_article_by_slug(engine, slug)
-    comment_instance = CommentModel(authorId=user_instance.id, **new_comment.dict())
+    comment_instance = CommentModel(author_id=user_instance.id, **new_comment.dict())
     await add_new_comment(engine, article, comment_instance)
     return SingleCommentResponse(comment={**comment_instance.dict(), 'author': user_instance})
 
@@ -45,11 +45,11 @@ async def add_article_comment(
 @router.delete('/articles/{slug}/comments/{id}')
 async def delete_article_comment(
     slug: str,
-    id: ObjectId,
+    comment_id: ObjectId,
     user_instance: User = Depends(get_current_user_instance),
     engine: AIOEngine = EngineD,
 ):
     article = await get_article_by_slug(engine, slug)
-    comment, index = get_comment_and_index_from_id(article, id)
+    comment, index = get_comment_and_index_from_id(article, comment_id)
     ensure_is_comment_author(user_instance, comment)
     await delete_comment_by_index(engine, article, index)

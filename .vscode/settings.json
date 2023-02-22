@@ -1,11 +1,10 @@
 {
   "python.formatting.provider": "black",
-  "editor.rulers": [88],
+  "editor.rulers": [150],
   "python.linting.enabled": true,
-  "python.linting.flake8Enabled": false,
-  "python.linting.mypyEnabled": false,
+  "python.linting.mypyEnabled": true,
   "python.envFile": "${workspaceFolder}/.env",
-  "python.pythonPath": "${workspaceFolder}/.venv/bin/python3.8",
+  "python.analysis.extraPaths": [".src/"],
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
   },
@@ -16,11 +15,8 @@
     ".pytest_cache/": true,
     ".mypy_cache/": true
   },
-  "python.linting.mypyArgs": [
-    "--config-file=${workspaceFolder}/mypy.ini",
-    "--no-pretty"
-  ],
+  "python.linting.mypyArgs": ["--config-file=${workspaceFolder}/mypy.ini"],
   "python.languageServer": "Pylance",
   "python.linting.pydocstyleArgs": ["--config=./.pydocstyle"],
-  "python.linting.banditEnabled": false
+  "python.linting.banditEnabled": true
 }

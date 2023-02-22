@@ -2,7 +2,7 @@ from typing import Optional
 
 from pydantic import SecretStr
 
-from .base import BaseSchema
+from schemas.base import BaseSchema
 
 
 class LoginUser(BaseSchema):

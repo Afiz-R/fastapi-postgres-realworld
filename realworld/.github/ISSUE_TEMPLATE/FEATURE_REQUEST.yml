@@ -1,12 +1,12 @@
-name:  🚀 Feature request
+name: 🚀 Feature request
 description: Suggest a feature for RealWorld project
-title: '[Feature Request]:'
+title: "[Feature Request]:"
 assignees:
   - geromegrignon
 body:
   - type: markdown
     attributes:
-      value: '# Feature Request'
+      value: "# Feature Request"
   - type: dropdown
     attributes:
       label: Relevant Scope
@@ -14,13 +14,13 @@ body:
       options:
         - Frontend specs
         - Backend specs
-        - 'Other: describe below'
+        - "Other: describe below"
     validations:
       required: true
   - type: textarea
     attributes:
       label: Description
-      description: ' <!-- ✍️--> '
+      description: " <!-- ✍️--> "
     validations:
       required: true
   - type: textarea

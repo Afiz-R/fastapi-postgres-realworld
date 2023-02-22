@@ -6,9 +6,8 @@ from pydantic import Field
 
 from models.article import CommentModel
 from models.user import UserModel
+from schemas.base import BaseSchema
 from schemas.user import Profile
-
-from .base import BaseSchema
 
 
 class Comment(BaseSchema):

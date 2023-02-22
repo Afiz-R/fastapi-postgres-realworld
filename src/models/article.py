@@ -9,18 +9,18 @@ from models.user import UserModel
 
 
 def generate_random_str():
-    string = str(uuid4())
-    return string.split('-')[0]
+    random_string = str(uuid4())
+    return random_string.split('-')[0]
 
 
 class CommentModel(EmbeddedModel):
     """Comment embedded model with a unique id field"""
 
-    id: ObjectId = Field(default_factory=ObjectId)
+    comment_id: ObjectId = Field(default_factory=ObjectId)
     body: str
     created_at: datetime = Field(default_factory=datetime.utcnow)
     updated_at: datetime = Field(default_factory=datetime.utcnow)
-    authorId: ObjectId
+    author_id: ObjectId
 
 
 class ArticleModel(Model):

@@ -1,6 +1,6 @@
 name: 🐞 Bug report
 description: Report a bug in the RealWorld project
-title: '[Bug]: '
+title: "[Bug]: "
 labels:
   - bug
 assignees:
@@ -14,7 +14,7 @@ body:
         - Frontend specs
         - Backend specs
         - Deployed demo
-        - 'Other: describe below'
+        - "Other: describe below"
     validations:
       required: true
   - type: textarea

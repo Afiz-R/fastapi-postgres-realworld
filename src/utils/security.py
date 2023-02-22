@@ -1,5 +1,4 @@
 from datetime import datetime, timedelta
-from typing import Optional, cast
 
 from fastapi import Depends, FastAPI, HTTPException
 from fastapi.openapi.models import OAuthFlows as OAuthFlowsModel
@@ -42,11 +41,11 @@ class OAuth2PasswordToken(OAuth2):
         super().__init__(flows=flows, scheme_name=scheme_name, auto_error=False)
 
     async def __call__(self, request: Request) -> str | None:
-        authorization: str = request.headers.get('Authorization')
+        authorization: str = request.headers.get('Authorization')  # type: ignore
         scheme, param = get_authorization_scheme_param(authorization)
         if not authorization or scheme.lower() != 'token':
             return None
-        return cast(str, param)
+        return str(param)
 
 
 OAUTH2_SCHEME = OAuth2PasswordToken(token_url='/users')

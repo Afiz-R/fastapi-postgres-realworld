@@ -14,7 +14,7 @@ from models.user import UserModel
 
 
 def ensure_is_comment_author(user: UserModel, comment: CommentModel):
-    if comment.authorId != user.id:
+    if comment.author_id != user.id:
         raise NotCommentAuthorException()
 
 
@@ -29,13 +29,13 @@ async def get_article_comments_and_authors_by_slug(engine: AIOEngine, slug: str)
         raise ArticleNotFoundException()
     comment_authors = await engine.find(
         UserModel,
-        UserModel.id.in_(comment.authorId for comment in article.comments),
+        UserModel.id.in_(comment.author_id for comment in article.comments),
     )
     try:
         return [
             (
                 comment,
-                next(user for user in comment_authors if user.id == comment.authorId),
+                next(user for user in comment_authors if user.id == comment.author_id),
             )
             for comment in article.comments
         ]
@@ -46,7 +46,7 @@ async def get_article_comments_and_authors_by_slug(engine: AIOEngine, slug: str)
 
 def get_comment_and_index_from_id(article: ArticleModel, comment_id: ObjectId) -> tuple[CommentModel, int]:
     for index, comment in enumerate(article.comments):
-        if comment.id == comment_id:
+        if comment.comment_id == comment_id:
             return comment, index
     raise CommentNotFoundException()
 
