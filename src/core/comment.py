@@ -1,5 +1,3 @@
-from typing import List, Tuple
-
 from odmantic.bson import ObjectId
 from odmantic.engine import AIOEngine
 

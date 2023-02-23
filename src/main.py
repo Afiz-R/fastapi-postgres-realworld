@@ -1,3 +1,8 @@
+"""
+Root of the project and main entry point for the application which inits the FastAPI app
+and includes all the routers. Also contains the main function to run the app.
+"""
+
 import uvicorn
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
@@ -20,16 +25,11 @@ app.add_middleware(
 )
 
 
-@app.get('/health', tags=['health'])
-async def health_check():
-    return {'status': 'ok'}
-
-
-app.include_router(user_router, tags=['user'])
-app.include_router(article_router, tags=['article'])
-app.include_router(comment_router, tags=['article'])
-app.include_router(tag_router, tags=['tag'])
-app.include_router(profile_router, tags=['profile'])
+app.include_router(user_router, tags=['user'], prefix='/api')
+app.include_router(profile_router, tags=['profile'], prefix='/api')
+app.include_router(article_router, tags=['article'], prefix='/api')
+app.include_router(comment_router, tags=['article'], prefix='/api')
+app.include_router(tag_router, tags=['tag'], prefix='/api')
 
 if __name__ == '__main__':
     uvicorn.run(app)

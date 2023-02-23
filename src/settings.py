@@ -1,4 +1,6 @@
-from typing import Optional
+"""
+This module contains the settings for the application. Env vars are defined here or in a .env file.
+"""
 
 from odmantic.fastapi import AIOEngineDependency
 from pydantic import BaseSettings

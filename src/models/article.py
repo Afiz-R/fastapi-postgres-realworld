@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Any, List, Tuple
+from typing import Any
 from uuid import uuid4
 
 from odmantic import EmbeddedModel, Field, Model, ObjectId, Reference

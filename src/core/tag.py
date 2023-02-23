@@ -1,5 +1,3 @@
-from typing import List
-
 from odmantic import AIOEngine
 
 from models.article import ArticleModel

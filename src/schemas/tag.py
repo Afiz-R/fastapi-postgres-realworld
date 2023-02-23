@@ -1,6 +1,4 @@
-from typing import List
-
-from .base import BaseSchema
+from schemas.base import BaseSchema
 
 
 class TagsResponse(BaseSchema):

@@ -12,10 +12,10 @@ uvicorn = "^0.20.0"
 passlib = { extras = ["bcrypt"], version = "^1.7.4" }
 python-jose = { extras = ["cryptography"], version = "^3.3.0" }
 odmantic = { git = "https://github.com/art049/odmantic.git" }
-ruff = "^0.0.251"
 sqlalchemy = "^2.0.4"
 
 [tool.poetry.dev-dependencies]
+ruff = "^0.0.251"
 pytest = "^7.1.2"
 isort = "^5.12.0"
 black = "^23"

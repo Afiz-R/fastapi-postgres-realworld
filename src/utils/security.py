@@ -53,11 +53,11 @@ OAUTH2_SCHEME = OAuth2PasswordToken(token_url='/users')
 app = FastAPI()
 
 
-def verify_password(plain_password, hashed_password):
+def verify_password(plain_password: str, hashed_password: str):
     return PWD_CONTEXT.verify(plain_password, hashed_password)
 
 
-def get_password_hash(password):
+def get_password_hash(password: str):
     return PWD_CONTEXT.hash(password)
 
 

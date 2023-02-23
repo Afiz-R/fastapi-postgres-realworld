@@ -1,5 +1,4 @@
 from datetime import datetime
-from typing import List, Tuple
 
 from odmantic.bson import ObjectId
 from pydantic import Field

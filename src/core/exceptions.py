@@ -1,3 +1,7 @@
+"""
+Exceptions and error codes for the application are defined here.
+"""
+
 from fastapi import HTTPException, status
 
 
