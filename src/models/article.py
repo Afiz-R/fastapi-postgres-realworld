@@ -16,7 +16,7 @@ def generate_random_str():
 class CommentModel(EmbeddedModel):
     """Comment embedded model with a unique id field"""
 
-    comment_id: ObjectId = Field(default_factory=ObjectId)
+    id: ObjectId = Field(default_factory=ObjectId)
     body: str
     created_at: datetime = Field(default_factory=datetime.utcnow)
     updated_at: datetime = Field(default_factory=datetime.utcnow)

@@ -5,9 +5,8 @@ from pydantic import Field
 
 from models.article import ArticleModel
 from models.user import UserModel
+from schemas.base import BaseSchema
 from schemas.user import Profile
-
-from .base import BaseSchema
 
 
 class Article(BaseSchema):

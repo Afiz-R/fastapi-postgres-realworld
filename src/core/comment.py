@@ -44,7 +44,7 @@ async def get_article_comments_and_authors_by_slug(engine: AIOEngine, slug: str)
 
 def get_comment_and_index_from_id(article: ArticleModel, comment_id: ObjectId) -> tuple[CommentModel, int]:
     for index, comment in enumerate(article.comments):
-        if comment.comment_id == comment_id:
+        if comment.id == comment_id:
             return comment, index
     raise CommentNotFoundException()
 

@@ -13,6 +13,8 @@ passlib = { extras = ["bcrypt"], version = "^1.7.4" }
 python-jose = { extras = ["cryptography"], version = "^3.3.0" }
 odmantic = { git = "https://github.com/art049/odmantic.git" }
 sqlalchemy = "^2.0.4"
+python-dotenv = "^1.0.0"
+psycopg = "^3.1.8"
 
 [tool.poetry.dev-dependencies]
 ruff = "^0.0.251"

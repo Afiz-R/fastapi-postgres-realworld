@@ -45,11 +45,11 @@ async def add_article_comment(
 @router.delete('/articles/{slug}/comments/{id}')
 async def delete_article_comment(
     slug: str,
-    comment_id: ObjectId,
+    id: ObjectId,
     user_instance: User = Depends(get_current_user_instance),
     engine: AIOEngine = EngineD,
 ):
     article = await get_article_by_slug(engine, slug)
-    comment, index = get_comment_and_index_from_id(article, comment_id)
+    comment, index = get_comment_and_index_from_id(article, id)
     ensure_is_comment_author(user_instance, comment)
     await delete_comment_by_index(engine, article, index)
