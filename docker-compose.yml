@@ -6,12 +6,12 @@ services:
     container_name: ${POSTGRES_HOSTNAME:-postgres-db}
     image: postgres:latest
     volumes:
-      - versus-db-data:${POSTGRES_DATA:-/var/lib/postgresql/data/pgdata}
+      - realworld-db-data:${POSTGRES_DATA:-/var/lib/postgresql/data/pgdata}
     ports:
       - ${POSTGRES_PORT:-5432}:${POSTGRES_PORT:-5432}
     restart: unless-stopped
     networks:
-      - versus-network
+      - realworld-network
 
   pgadmin:
     container_name: pgadmin
@@ -22,15 +22,15 @@ services:
     env_file:
       - .env
     networks:
-      - versus-network
+      - realworld-network
     ports:
       - '${PGADMIN_HOST_PORT:-5050}:${PGADMIN_LISTEN_PORT:-80}'
     restart: unless-stopped
     volumes:
       - pgadmin-data:/var/lib/pgadmin
 volumes:
-  versus-db-data:
+  realworld-db-data:
   pgadmin-data:
 
 networks:
-  versus-network:
+  realworld-network:

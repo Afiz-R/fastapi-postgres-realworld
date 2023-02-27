@@ -14,7 +14,7 @@ class _Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES = 30
     MONGO_URI: str | None = None
     POSTGRES_URI: URL = URL.create(
-        drivername='postgresql+psycopg', username='versus', password='versus', host='postgres-db', port=5432, database='versus'
+        drivername='postgresql+psycopg', username='realworld', password='realworld', host='postgres-db', port=5432, database='realworld'
     )
 
 
