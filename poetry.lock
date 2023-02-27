@@ -833,6 +833,7 @@ files = [
 ]
 
 [package.dependencies]
+python-dotenv = {version = ">=0.10.4", optional = true, markers = "extra == \"dotenv\""}
 typing-extensions = ">=4.2.0"
 
 [package.extras]
@@ -1308,4 +1309,4 @@ test = ["covdefaults (>=2.2.2)", "coverage (>=7.1)", "coverage-enable-subprocess
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "a834792def7f14e36faa9bbd0df841f4ca1167cb93df4b4c98016acacb3ded8a"
+content-hash = "c973520bb6a48f6e263c78cd2436a3b8a70c3acdcbbf3b720a31f4626d4cb21f"
